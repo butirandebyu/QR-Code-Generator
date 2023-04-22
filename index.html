@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>✨ QR Generator ✨</title>
+    <!-- 👇 css code file 👇 -->
+    <link rel="stylesheet" href="./src/style/global.css" />
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+  </head>
+  <body>
+    <header class="container qr-header">
+      <div class="row row--qr-header">
+          <div class="col qr-logo">
+              <img class="qr-logo__img" src="0b3922d9d1e466270a79706c08c4a57c.png" alt="QR code styling logo" />
+          </div>
+          <a target="_blank" rel="noopener" class="col white" href="https://www.npmjs.com/package/qr-code-styling">npm v1.3.4</a>
+          <a target="_blank" rel="noopener" class="col white" href="https://github.com/kozakdenys/qr-code-styling">GitHub</a>
+      </div>
+  </header>
+
+  <main>
+
+    <section class="container">
+        <div class="row row--body">
+            <form class="col qr-form" id="form">
+                <button type="button">Custom Qr-code</button>
+                <div class="panel panel--open">
+                    <label for="form-data">Data</label>
+                    <input  id="data" type="text" value="https://qr-code-styling.com" />
+                    <label for="form-image-file">Logo</label>
+                    <div class="buttons-container">
+                        <input id="logo" type="file" />
+                        <button type="button" id="clear">Cancel</button>
+                    </div>
+                    <label for="form-width">Size</label>
+                    <div>
+                        <input id="size" type="range" min="0" max="30" value="0"/>
+                    </div>
+                    <label for="form-height">Margin</label>
+                    <div>
+                        <input type="range" value="0" id="margin" min="10" max="30"/>
+                    </div>
+
+                    <label for="form-dots-type">Dots Style</label>
+                    <div>
+                        <select id="dot">
+                            <option value="square">Square</option>
+                            <option value="dots">Dots</option>
+                            <option value="rounded">Rounded</option>
+                            <option value="extra-rounded">Extra rounded</option>
+                            <option value="classy">Classy</option>
+                            <option value="classy-rounded">Classy rounded</option>
+                        </select>
+                    </div>
+                    <label for="dot-color">Dots Gradient Color</label>
+                    <div class="dotsOptionsHelper.colorType.gradient" >
+                        <input node="dotsOptionsHelper.gradient.color1" type="color" id="dot-color-1"/>
+                        <input node="dotsOptionsHelper.gradient.color2" type="color" id="dot-color-2"/>
+                    </div>
+                    <label for="form-corners-square-color">Corners Square Color</label>
+                    <div class="cornersSquareOptionsHelper.colorType.single buttons-container">
+                        <input node="cornersSquareOptions.color" id="bg-color" type="color" />
+                    </div>
+                  </div>
+            </form>
+            <div class="col qr-code-container">
+              
+                <div class="qr-code" id="canvas"></div>
+                <p>300px x 300px</p>
+                <div class="qr-code" id="qr-code-generated"></div>
+                <div class="qr-download-group">
+                    <button id="btn-dl">Download</button>
+                    <label class="hide" for="ext">Extension</label>
+                    <select id="ext">
+                        <option value="png" selected>PNG</option>
+                        <option value="jpeg">JPEG</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="container qr-footer">
+    <div class="col">
+        © 2023 <a target="_blank"  class="white">Hasbi Alwi Kusmana</a>
+    </div>
+</footer>
+
+    <!-- 👇 javascript code file 👇 -->
+    <script src="./src/js/index.js"></script>
+  </body>
+</html>
